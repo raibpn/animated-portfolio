@@ -38,6 +38,42 @@
     }
     img {
       width: 32px;
+      margin: 20px;
+      opacity: 0;
+      height: auto;
+      animation: rotateIn 1s linear both;
+      animation-delay: 1.4s;
     }
+  }
+
+  h2 {
+    color: #8d8d8d;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+    animation: fadeIn 1s 1.8s backwards;
+  }
+
+  .flat-button {
+    background-color: #73789d;
+    color: #171a20;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: normal;
+    border-radius: 10px;
+    border: 1px solid rgb(148, 233, 165);
+    margin: 20px;
+    // padding: 4px;
+    &:hover {
+      background-color: #a8b2cb;
+    }
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 8px;
+    float: left;
+    animation: fadeIn 1s 1.8s backwards;
+    white-space: nowrap;
   }
 }
