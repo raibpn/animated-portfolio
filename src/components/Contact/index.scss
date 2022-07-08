@@ -72,7 +72,10 @@
     text-transform: uppercase;
     float: right;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 2px;
+    &:hover {
+      background-color: rgba(10, 6, 6, 0.267);
+    }
   }
 }
 

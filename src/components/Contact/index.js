@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const form = useRef()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -11,6 +13,21 @@ const Contact = () => {
     }, 3000)
     return () => clearTimeout(timer)
   }, [])
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs
+      .sendForm('gmail', 'template_e82x7qd', form.current, '6IvF93XE_oXLGv6CT')
+      .then(
+        () => {
+          alert('Message Successfully Sent!')
+          e.target.reset()
+        },
+        () => {
+          alert('Failed to send email!')
+        }
+      )
+  }
 
   return (
     <>
@@ -35,29 +52,33 @@ const Contact = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <div className="contact-form">
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input type="text" placholder="Name" name="name" required />
+                  <input type="text" placeholder="Name" name="name" required />
                 </li>
                 <li className="half">
                   <input
                     type="email"
                     name="email"
-                    placholder="Email"
+                    placeholder="Email"
                     required
                   />
                 </li>
                 <li>
                   <input
-                    placholder="subject"
+                    placeholder="Subject"
                     type="text"
                     name="subject"
                     required
                   />
                 </li>
                 <li>
-                  <textarea placeholder="message" required></textarea>
+                  <textarea
+                    placeholder="Message"
+                    name="message"
+                    required
+                  ></textarea>
                 </li>
                 <li>
                   <input type="submit" className="flat-button" value="Send" />
