@@ -9,6 +9,7 @@ import {
   faNodeJs,
   faReact,
   faAngular,
+  faGithub,
 } from '@fortawesome/free-brands-svg-icons'
 
 const About = () => {
@@ -16,7 +17,7 @@ const About = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 4000)
+    }, 3000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -66,23 +67,26 @@ const About = () => {
       </div>
       <div className="stage-cube-cont">
         <div className="cubespinner">
+          <div className="face0">
+            <FontAwesomeIcon icon={faGithub} color="#000000" />
+          </div>
           <div className="face1">
             <FontAwesomeIcon icon={faAngular} color="#DD0031" />
           </div>
           <div className="face2">
-            <FontAwesomeIcon icon={faHtml5} color="#DD0031" />
+            <FontAwesomeIcon icon={faHtml5} color="#F06529" />
           </div>
           <div className="face3">
-            <FontAwesomeIcon icon={faCss3} color="#DD0031" />
+            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
           </div>
           <div className="face4">
-            <FontAwesomeIcon icon={faReact} color="#DD0031" />
+            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
           </div>
           <div className="face5">
-            <FontAwesomeIcon icon={faNodeJs} color="#DD0031" />
+            <FontAwesomeIcon icon={faNodeJs} color="#EFD81D" />
           </div>
           <div className="face6">
-            <FontAwesomeIcon icon={faJsSquare} color="#DD0031" />
+            <FontAwesomeIcon icon={faJsSquare} color="#EC4" />
           </div>
         </div>
       </div>
